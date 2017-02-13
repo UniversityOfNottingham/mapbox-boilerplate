@@ -45,4 +45,4 @@ It may be necessary to revisit components as browser support requirements change
 
 ## Components
 
-* **Story Map.** Using the same content as [this Mapbox example](https://www.mapbox.com/mapbox.js/example/v1.0.0/scroll-driven-navigation/). Map focus is changed on scroll and when clicking each section or map markers. Uses GeoJSON.
+* **Story Map.** Using the same content as [this Mapbox example](https://www.mapbox.com/mapbox.js/example/v1.0.0/scroll-driven-navigation/). Map focus is changed on scroll and when clicking each section or map markers. Uses GeoJSON. Note: Uses `position: sticky` and `blend-mode` in CSS, so needs Firefox, Safari, Chrome 56+ or Opera 46+.
