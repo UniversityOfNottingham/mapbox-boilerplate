@@ -29,7 +29,8 @@ This project provides a platform on which to build with Mapbox in components to 
 
 ## Adding components
 
-* Create independent view(s), JavaScript (in `src/js/components`) and SASS (in `src/sass/components`).
+* Create independent view(s) (in `src/views`), JavaScript (in `src/js/components`) and SASS (in `src/sass/components`).
+* When using the `_file-header.hbs` partial, pass a `bodyClass` parameter to add a class name to the body, then use this class name to override CSS on the body tag in `_base.scs`.
 * Add comments to all JavaScript that uses the Mapbox API, and any vanilla javaScript or SASS/CSS that may need some explanation.
 * Name files consistently so it's clear which module they belong to.
 * Add a link to the component with a description to the project index including any code used that should be noted.

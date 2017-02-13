@@ -10,8 +10,8 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
-  background: color(background--body);
-  color: color(type);
+  background-color: color(background--index);
+  color: color(type--index);
   font-family: type(face);
   font-size: type(size);
   font-weight: type(weight);
@@ -22,11 +22,13 @@ body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   &.index {
-    background-color: color(background--index);
-    color: color(type--index);
     padding: 5%;
     @include mq(medium) {
       padding-right: 35%;
     }
+  }
+  &.story-map {
+    background: color(background--body);
+    color: color(type);
   }
 }
