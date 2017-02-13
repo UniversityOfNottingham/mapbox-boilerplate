@@ -1,0 +1,4 @@
+{
+  "small": "(min-width: 600px)",
+  "medium": "(min-width: 900px)"
+}

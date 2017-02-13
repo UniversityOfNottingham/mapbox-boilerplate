@@ -1,0 +1,17 @@
+$type: (
+  'face': 'Roboto',
+  'face--sans': 'Roboto',
+  'face--serif': 'Merriweather',
+
+  'size': 100%,
+
+  'weight': 300,
+  'weight--bold': 500
+);
+
+@function type($value) {
+  @if map-has-key($type, $value) {
+    @return map-get($type, $value);
+  }
+  @warn 'Requested value is not included in the $type map.';
+}
