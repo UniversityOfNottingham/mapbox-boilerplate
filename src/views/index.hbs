@@ -1,0 +1,35 @@
+{{> _index-header}}
+
+<h1>Mapbox Components</h1>
+
+<p>A Project to contain and document reusable Mapbox components.</p> View the <a href="https://github.com/UniversityOfNottingham/mapbox-components/blob/develop/README.md">project readme</a> for more information.</p>
+<p>Each component includes an example and should be treated as a starting point. None of the enclosed code should be used in production as is.</p>
+
+<dl class="component">
+  <dt><h2 class="component__title"><a href="story-map">Story Map</a></h2></dt>
+  <dd class="component__author">Alan Shortis</dd>
+  <dd class="component__description">
+    <p>A map attached to a narrative. Each section of the narrative is connected to a point on the map which gets focus when the page is scrolled or a section/marker clicked.</p>
+    <p>The map points and extra associated properties are stored in GeoJSON. This could also contain all of the narrative text, but in this example it's just hard coded in to the view.</p>
+    <p>
+      <h3>Notable features</h3>
+      <ul class="feature-list">
+        <li class="feature-list__item">Uses <code>matchMedia</code> to change JavaScript behaviour based on media query. To share media queries between JavaScript and CSS we are using <a href="https://www.npmjs.com/package/json-sass">json-sass</a>.</li>
+        <li class="feature-list__item">Uses <code>position: sticky</code> and <code>blend-mode</code> in CSS. Check browser support.</li>
+      </ul>
+  </dd>
+</dl>
+
+<!-- <dl class="component">
+<dt><h2 class="component__title"><a href="story-map">Component Name</a></h2></dt>
+<dd class="component__author">Author</dd>
+    <p>A description of the component.</p>
+    <p>
+      <h3>Notable features</h3>
+      <ul class="feature-list">
+        <li class="feature-list__item">Anything about the component worth noting: Weird behaviour, particular techniques and methods, etc.</li>
+      </ul>
+  </dd>
+</dl> -->
+
+{{> _index-footer}}

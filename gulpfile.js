@@ -42,7 +42,6 @@ gulp.task('serve', ['clean', 'json-sass', 'css', 'js', 'images', 'html'], () => 
   browserSync.init({
     server: {
       baseDir: paths.dest.dest,
-      index: 'story-map.html',
       serveStaticOptions: {
         extensions: ['html']
       }
@@ -50,8 +49,8 @@ gulp.task('serve', ['clean', 'json-sass', 'css', 'js', 'images', 'html'], () => 
   });
   gulp.watch(`${paths.src.sass}/**/*.scss`, ['css']);
   gulp.watch(`${paths.src.js}/**/*.{js,json}`, ['js']);
-  gulp.watch(`${paths.src.img}/**/*`, ['images']);
-  gulp.watch(`${paths.src.html}/**/*`, ['html']);
+  gulp.watch(`${paths.src.img}/**/*.{png,jpg,svg}`, ['images']);
+  gulp.watch(`${paths.src.html}/**/*.{html,hbs}`, ['html']);
 });
 
 
@@ -128,7 +127,7 @@ gulp.task('images', () => {
 gulp.task('html', () => {
   const options = {
     partialsDirectory: paths.src.partials,
-    allowedExtensions: ['hbs', 'html', 'svg']
+    allowedExtensions: ['hbs', 'html']
   };
   return gulp.src([`${paths.src.html}/**/*{hbs, html}`, `!${paths.src.partials}/**/*{hbs, html}`])
     .pipe(gulpHandlebars(null, options))

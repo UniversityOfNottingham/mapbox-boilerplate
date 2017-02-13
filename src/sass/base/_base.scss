@@ -21,4 +21,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  &.index {
+    background-color: color(background--index);
+    color: color(type--index);
+    padding: 5%;
+    @include mq(medium) {
+      padding-right: 35%;
+    }
+  }
 }
