@@ -4,7 +4,7 @@ var L = require('mapbox.js'),
     mq = require('../data/_media-queries.json');
 
 
-function landmineMap() {
+function sherlockMap() {
   var mapContainer = document.querySelector('#map'), // Select the map container.
       map = _initMap(), // Initialise the map and get the map object back.
       mapHeight = mapContainer.clientHeight, // Get the height of the map.
@@ -181,5 +181,5 @@ function landmineMap() {
 
 
 module.exports = {
-  landmine: landmineMap
+  sherlock: sherlockMap
 };
