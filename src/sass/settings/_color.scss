@@ -1,27 +1,18 @@
-$color: (
-  background--body: #333333,
-  background--map: #333333,
-  background--narrative: #333333,
-  background--narrative--hover: #444444,
-  background--narrative--active: rgba(255, 82, 82, .33),
-  background--index: #fefefe,
-  background--code: #eeeccc,
-  marker: #294e65,
-  link: #0000ff,
-  marker-border: #386580,
-  marker--active: #6b3232,
-  marker-border--active: #a65455,
-  cover-overlay: rgba(255, 82, 82, .33),
-  background--overlay: rgba(33, 33, 33, .66),
-  type: #fefefe,
-  type--index: #333333,
-  divider: #444444,
-  divider--index: #cccccc
-);
-
-@function color($value) {
-  @if map-has-key($color, $value) {
-    @return map-get($color, $value);
-  }
-  @warn 'Requested colour is not included in the $color map.';
-}
+$background--body: #333333;
+$background--map: #333333;
+$background--narrative: #333333;
+$background--narrative--hover: #444444;
+$background--narrative--active: rgba(255, 82, 82, .33);
+$background--index: #fefefe;
+$background--code: #eeeccc;
+$marker: #294e65;
+$link: #0000ff;
+$marker-border: #386580;
+$marker--active: #6b3232;
+$marker-border--active: #a65455;
+$cover-overlay: rgba(255, 82, 82, .33);
+$background--overlay: rgba(33, 33, 33, .66);
+$type: #fefefe;
+$type--index: #333333;
+$divider: #444444;
+$divider--index: #cccccc;

@@ -6,6 +6,7 @@ files:
 rules:
   extends-before-mixins: 2
   extends-before-declarations: 2
+  mixins-before-declarations: 2
   placeholder-in-extend: 2
   force-attribute-nesting: 0
   force-element-nesting: 0
@@ -25,10 +26,10 @@ rules:
   no-empty-rulesets: 1
   no-trailing-whitespace: 0
   no-trailing-zero: 1
-  no-transition-all: 1
+  no-transition-all: 0
   no-universal-selectors: 2
   no-url-protocols: 0
-  url-quotes: 0
+  url-quotes: 2
   no-ids: 2
   no-important: 2
   pseudo-element: 2
@@ -68,7 +69,7 @@ rules:
     - 2
     -
       allow-leading-underscore: true
-      convention: hyphenatedlowercase
+      convention: hyphenatedbem
   mixin-name-format:
     - 2
     -
@@ -114,11 +115,11 @@ rules:
       - 1
       - 2
   space-after-bang:
-    - 1
+    - 2
     -
       include: false
   space-before-bang:
-    - 1
+    - 2
     -
       include: true
   space-before-brace:
@@ -155,7 +156,7 @@ rules:
     -
       style: lowercase
   hex-length:
-    - 1
+    - 0
     -
       style: long
   no-color-literals:
@@ -172,17 +173,13 @@ rules:
     - 2
     -
       style: single
-  mixins-before-declarations:
-    - 2
-    -
-      exclude: 'mq'
   property-units:
     - 0
     -
       global: ['em', 'rem', 'px']
       per-property: {width: ['em', 'rem', 'vw'], height: ['em', 'rem', 'vh']}
   variable-for-property:
-    - 0
+    - 2
     -
       properties:
         - color

@@ -1,7 +1,7 @@
 .component {
   margin: ($content-margin * 2) 0;
   padding: $content-margin;
-  border: 1px solid color(divider--index);
+  border: 1px solid $divider--index;
   &__title {
     margin-bottom: 0;
     a {

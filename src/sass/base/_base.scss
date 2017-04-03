@@ -10,11 +10,11 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 100%;
-  background-color: color(background--index);
-  color: color(type--index);
-  font-family: type(face);
-  font-size: type(size);
-  font-weight: type(weight);
+  background-color: $background--index;
+  color: $type--index;
+  font-family: $face;
+  font-size: $size;
+  font-weight: $weight;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +28,7 @@ body {
     }
   }
   &.story-map {
-    background: color(background--body);
-    color: color(type);
+    background: $background--body;
+    color: $type;
   }
 }

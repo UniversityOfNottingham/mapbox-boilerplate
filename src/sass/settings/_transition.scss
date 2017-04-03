@@ -1,14 +1,4 @@
-$transition: (
-  'duration': 200ms,
-  'duration--short': 100ms,
-  'duration--long': 400ms,
-
-  'timing': ease
-);
-
-@function transition($value) {
-  @if map-has-key($transition, $value) {
-    @return map-get($transition, $value);
-  }
-  @warn 'Requested value is not included in the $transition map.';
-}
+$duration: 200ms;
+$duration--short: 100ms;
+$duration--long: 400ms;
+$timing: ease;

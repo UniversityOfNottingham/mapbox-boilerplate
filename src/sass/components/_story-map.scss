@@ -17,7 +17,7 @@
   top: 0;
   width: 100%;
   height: 30vh;
-  background-color: color(background--map) !important;
+  background-color: $background--map !important;
   @include mq(small) {
     position: sticky !important;
     width: 50%;
@@ -32,8 +32,8 @@
   width: 100%;
   height: 70vh;
   margin-top: 30vh;
-  background-color: color(background--narrative);
-  font-family: type(face--serif);
+  background-color: $background--narrative;
+  font-family: $face--serif;
   @include mq(small) {
     width: 50%;
     height: auto;
@@ -51,7 +51,7 @@
     padding: $content-margin;
     height: 50vh;
     background-image: url('/img/cover.png');
-    background-color: color(cover-overlay);
+    background-color: $cover-overlay;
     background-position: center center;
     background-size: cover;
     background-blend-mode: multiply;
@@ -65,17 +65,17 @@
   &__item {
     padding: $content-margin;
     min-height: 25vh;
-    border-bottom: 1px solid color(divider);
+    border-bottom: 1px solid $divider;
     cursor: pointer;
-    transition: background transition(duration) transition(timing);
+    transition: background $duration $timing;
     &:hover {
-      background: color(background--narrative--hover);
+      background: $background--narrative--hover;
     }
     &:last-child {
       margin-bottom: 50vh;
     }
     &.is-active {
-      background: color(background--narrative--active);
+      background: $background--narrative--active;
     }
   }
 }
@@ -89,13 +89,13 @@
   line-height: 20px;
   text-align: center;
   font-size: 90%;
-  font-family: type(face);
-  color: color(type);
-  background: color(marker);
-  border: 2px solid color(marker-border);
-  transition: background transition(duration) transition(timing), border transition(duration) transition(timing);
+  font-family: $face;
+  color: $type;
+  background: $marker;
+  border: 2px solid $marker-border;
+  transition: background $duration $timing, border $duration $timing;
   &.is-active {
-    background: color(marker--active);
-    border-color: color(marker-border--active);
+    background: $marker--active;
+    border-color: $marker-border--active;
   }
 }

@@ -8,8 +8,8 @@ p {
 h1,
 h2,
 h3 {
-  font-family: type(face);
-  font-weight: type(weight--bold);
+  font-family: $face;
+  font-weight: $weight--bold;
   font-size: 1.5rem;
   margin-bottom: $content-margin;
 }
@@ -27,12 +27,12 @@ h3 {
 }
 
 a {
-  color: color(link);
+  color: $link;
 }
 
 code {
-  background-color: color(background--code);
-  font-family: monospace;
+  background-color: $background--code;
+  font-family: $face--mono;
   padding: ($content-margin / 6) ($content-margin / 4);
   border-radius: 3px;
 }
