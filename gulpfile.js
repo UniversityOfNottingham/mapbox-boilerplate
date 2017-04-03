@@ -1,20 +1,20 @@
 // Require packages from node_modules.
-const gulp = require('gulp'),
-      sass = require('gulp-sass'),
-      sassLint = require('gulp-sass-lint'),
-      sourcemaps = require('gulp-sourcemaps'),
-      autoprefixer = require('gulp-autoprefixer'),
-      browserify = require('browserify'),
-      fs = require('fs'),
-      jsonSass = require('json-sass'),
-      handlebars = require('handlebars'),
-      gulpHandlebars = require('gulp-handlebars-html')(handlebars),
-      notifier = require('node-notifier'),
-      rename = require('gulp-rename'),
-      del = require('del'),
-      buffer = require('vinyl-buffer'),
-      source = require('vinyl-source-stream'),
-      browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const sassLint = require('gulp-sass-lint');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const browserify = require('browserify');
+const fs = require('fs');
+const jsonSass = require('json-sass');
+const handlebars = require('handlebars');
+const gulpHandlebars = require('gulp-handlebars-html')(handlebars);
+const notifier = require('node-notifier');
+const rename = require('gulp-rename');
+const del = require('del');
+const buffer = require('vinyl-buffer');
+const source = require('vinyl-source-stream');
+const browserSync = require('browser-sync').create();
 
 
 // File paths to source and destination files.
@@ -35,23 +35,6 @@ const paths = {
     partials: './src/views/partials'
   }
 };
-
-
-// Serve/default task. Starts browserSync and some watch tasks.
-gulp.task('serve', ['clean', 'json-sass', 'css', 'js', 'images', 'html'], () => {
-  browserSync.init({
-    server: {
-      baseDir: paths.dest.dest,
-      serveStaticOptions: {
-        extensions: ['html']
-      }
-    }
-  });
-  gulp.watch(`${paths.src.sass}/**/*.scss`, ['css']);
-  gulp.watch(`${paths.src.js}/**/*.{js,json}`, ['js']);
-  gulp.watch(`${paths.src.img}/**/*.{png,jpg,svg}`, ['images']);
-  gulp.watch(`${paths.src.html}/**/*.{html,hbs}`, ['html']);
-});
 
 
 // Build CSS from SASS with autoprefixer and sourcemaps. Runs SASS Lint first.
@@ -103,7 +86,7 @@ gulp.task('js', () => {
 
 
 // Generate a scss partial containing a map from the specified json file.
-// Don't botther with this task unless you need media queries in JavaScript.
+// Don't bother with this task unless you need media queries in JavaScript.
 gulp.task('json-sass', () => {
   return fs.createReadStream(`${paths.src.js}/data/_media-queries.json`)
     .pipe(jsonSass({
@@ -129,7 +112,7 @@ gulp.task('html', () => {
     partialsDirectory: paths.src.partials,
     allowedExtensions: ['hbs', 'html']
   };
-  return gulp.src([`${paths.src.html}/**/*{hbs, html}`, `!${paths.src.partials}/**/*{hbs, html}`])
+  return gulp.src([`${paths.src.html}/**/*{hbs,html}`, `!${paths.src.partials}/**/*{hbs,html}`])
     .pipe(gulpHandlebars(null, options))
     .pipe(rename((path) => {
       path.extname = '.html';
@@ -145,5 +128,22 @@ gulp.task('clean', () => {
 });
 
 
-// Default task: on 'gulp', start the 'serve' task.
-gulp.task('default', ['serve']);
+// Start a server with browsersync and watch for changes.
+gulp.task('watch', ['default'], () => {
+  browserSync.init({
+    server: {
+      baseDir: paths.dest.dest,
+      serveStaticOptions: {
+        extensions: ['html']
+      }
+    }
+  });
+  gulp.watch(`${paths.src.sass}/**/*.scss`, ['css']);
+  gulp.watch(`${paths.src.js}/**/*.{js,json}`, ['js']);
+  gulp.watch(`${paths.src.img}/**/*.{png,jpg,svg}`, ['images']);
+  gulp.watch(`${paths.src.html}/**/*.{html,hbs}`, ['html']);
+});
+
+
+// Do everything except serve and watch.
+gulp.task('default', ['clean', 'json-sass', 'css', 'js', 'images', 'html']);
