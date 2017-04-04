@@ -16,13 +16,14 @@ function markerCluster() {
     return L.mapbox.map(mapContainer, 'mapbox.dark');
   }
 
-  // Create a layer for our pins and plot them from GeoJSON.
-  var pointsLayer = L.mapbox.featureLayer().addTo(map);
-  pointsLayer.setGeoJSON(mapPoints);
+  // Create a marker cluster group and a layer of map points.
+  var points = L.markerClusterGroup();
+  var pointsLayer = L.geoJson(mapPoints);
 
-  // Set the bounds of the map to contain the data in the loaded GeoJSON.
-  map.fitBounds(pointsLayer.getBounds());
-
+  // Add the points to the map and set the bounds.
+  points.addLayer(pointsLayer);
+  map.addLayer(points);
+  map.fitBounds(points.getBounds());
 }
 
 
