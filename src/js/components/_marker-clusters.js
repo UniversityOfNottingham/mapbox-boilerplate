@@ -17,13 +17,31 @@ function markerCluster() {
   }
 
   // Create a marker cluster group and a layer of map points.
-  var points = L.markerClusterGroup();
+  var points = L.markerClusterGroup({
+    showCoverageOnHover: false
+  });
   var pointsLayer = L.geoJson(mapPoints);
 
   // Add the points to the map and set the bounds.
   points.addLayer(pointsLayer);
   map.addLayer(points);
   map.fitBounds(points.getBounds());
+
+
+  // Constructor for map markers, so we can add new properties if we need them.
+  function MapIcon(className) {
+    return {
+      className
+    }
+  }
+
+  // New MapIcon instance.
+  var icon = new MapIcon('single-marker');
+
+  // Apply the icon style to each marker.
+  pointsLayer.eachLayer(function(layer) {
+    layer.setIcon(L.divIcon(icon));
+  });
 }
 
 
