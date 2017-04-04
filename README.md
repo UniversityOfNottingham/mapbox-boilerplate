@@ -12,8 +12,8 @@
 
 ## Getting started
 
-* From the project root, run `yarn install` to get dependancies from NPM.
-* Run `gulp` or `npm start` to start the project.
+* From the project root, run `yarn` to get dependancies from NPM.
+* Run `gulp watch` or `npm start` to start the project.
 * This will start on [localhost:3000](http://localhost:3000/) and automatically reload when any changes are made using [BrowserSync](https://browsersync.io/).
 
 

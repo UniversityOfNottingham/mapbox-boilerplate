@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "gulp"
+    "start": "gulp watch"
   },
   "devDependencies": {
     "browser-sync": "^2.18.6",
