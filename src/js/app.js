@@ -1,5 +1,7 @@
-var maps = require('./components/_story-map');
+if (document.body.className.match('story-map')) {
+  require('./components/_story-map').sherlock();
+}
 
-
-
-maps.sherlock();
+if (document.body.className.match('marker-clusters')) {
+  require('./components/_marker-clusters').cluster();
+}
