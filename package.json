@@ -1,8 +1,8 @@
 {
-  "name": "mapbox-boilerplate",
+  "name": "mapbox-components",
   "version": "0.0.1",
   "description": "Starting point for Mapbox powered components",
-  "repository": "git@github.com:UniversityOfNottingham/mapbox-boilerplate.git",
+  "repository": "git@github.com:UniversityOfNottingham/mapbox-components.git",
   "author": "Alan Shortis <alan.shortis@nottingham.ac.uk>",
   "license": "MIT",
   "private": true,
